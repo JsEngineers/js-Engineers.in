@@ -15,7 +15,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-3 mb-4">
 
-            <div className="relative w-10 h-10">
+            <div className="relative w-30 h-30">
               <Image
                 src={IMAGES.LOGO_PRIMARY}
                 alt={COMPANY.name}
