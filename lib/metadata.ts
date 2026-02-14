@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { COMPANY } from "../constants/company";
 
 const baseUrl = "https://jsengineers.in"; 
