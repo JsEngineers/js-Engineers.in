@@ -35,5 +35,4 @@ export const IMAGES = {
   TESTIMONIAL_BG: "https://res.cloudinary.com/dc1imhvuy/image/upload/v1770129963/testimonials-bg_por1ym.png",
 
   // ABOUT
-  ABOUT_FOUNDER: "https://res.cloudinary.com/dc1imhvuy/image/upload/v1770135950/about-founder_dyjwwz.jpg"
-};
+  ABOUT_FOUNDER: "https://res.cloudinary.com/dc1imhvuy/image/upload/v1770425733/nul5rtiftzae7s6iik02.jpg",};
