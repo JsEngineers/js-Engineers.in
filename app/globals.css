@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root {
+  --color-primary: #0B3C5D;
+  --color-accent: #F97316;
+  --color-muted: #6B7280;
+  --color-bg: #F9FAFB;
+}
+
+/* =========================
+   BASE STYLES
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-gray-800 antialiased;
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* =========================
+   CONTAINER STANDARDIZATION
+========================= */
+
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* =========================
+   SECTION SPACING
+========================= */
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+/* =========================
+   BUTTON BASE
+========================= */
+
+.btn-primary {
+  @apply bg-[var(--color-primary)] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition;
+}
+
+.btn-accent {
+  @apply bg-[var(--color-accent)] text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition;
+}
