@@ -57,6 +57,17 @@ export default function AboutPage() {
               is executed with precision, professionalism, and long-term reliability.
             </p>
 
+            {/* ✅ PDF Download Button (Added Only This) */}
+            <div className="mt-6">
+              <a
+                href="/assets/AboutCompany.Pdf"
+                download
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow transition font-medium"
+              >
+                Download Company Profile
+              </a>
+            </div>
+
 
             {/* Key highlights */}
             <div className="grid grid-cols-2 gap-4 mt-6">
