@@ -17,45 +17,29 @@ export default function Hero() {
         className="object-cover scale-105"
       />
 
-      {/* Gradient Overlay (better than plain black) */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/40" />
-
-      {/* Subtle highlight glow */}
       <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 via-transparent to-transparent" />
 
-
-      {/* Content */}
       <Section className="relative z-10 pt-28 pb-20">
 
         <div className="max-w-3xl">
 
-          {/* Badge */}
           <div className="inline-block bg-white/10 backdrop-blur-md text-white px-4 py-1 rounded-full text-sm mb-5 border border-white/20 shadow">
             Trusted Engineering Services in Prayagraj
           </div>
 
-
-          {/* Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-
             Reliable Engineering
             <span className="block text-blue-400">
               Solutions You Can Trust
             </span>
-
           </h1>
 
-
-          {/* Description */}
           <p className="text-gray-200 text-lg md:text-xl mb-10 max-w-xl">
-
             Professional Electrical, Telecom, and Satellite engineering
             services for residential, commercial, and industrial projects.
-
           </p>
 
-
-          {/* Buttons */}
           <div className="flex flex-wrap gap-4">
 
             <Button
@@ -65,9 +49,9 @@ export default function Hero() {
               Request Service
             </Button>
 
-
+            {/* ✅ Updated WhatsApp Link */}
             <Button
-              href={`https://wa.me/${COMPANY.phone.replace(/\D/g, "")}`}
+              href={`https://wa.me/${COMPANY.phones.mobile.replace(/\D/g, "")}`}
               className="px-8 py-3 text-lg bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white/20 rounded-lg transition"
             >
               Chat on WhatsApp
@@ -75,8 +59,6 @@ export default function Hero() {
 
           </div>
 
-
-          {/* Trust indicators */}
           <div className="flex flex-wrap gap-6 mt-10 text-sm text-gray-300">
 
             <div className="flex items-center gap-2">

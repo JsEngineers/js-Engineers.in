@@ -27,20 +27,17 @@ export default function Navbar() {
     { name: "Contact", href: "/contact" },
   ];
 
-  const whatsappLink = `https://wa.me/${COMPANY.phone.replace(/\D/g, "")}`;
+  // ✅ UPDATED: Use new phone structure
+  const whatsappLink = `https://wa.me/${COMPANY.phones.mobile.replace(/\D/g, "")}`;
 
 
-  // Scroll detection
   useEffect(() => {
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
-
   }, []);
 
 
@@ -59,13 +56,13 @@ export default function Navbar() {
 
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center ">
 
-          {/* FIXED LOGO SIZE */}
-          <div className="relative w-30 h-30 md:w-30 md:h-30">
+          {/* ✅ UPDATED: Independent Width & Height */}
+          <div className="relative w-[280px] h-[250px]">
 
             <Image
-              src={IMAGES.LOGO_PRIMARY}
+              src={COMPANY.logo}
               alt={COMPANY.name}
               fill
               className="object-contain"
@@ -113,8 +110,6 @@ export default function Navbar() {
 
           })}
 
-
-
           {/* WhatsApp CTA */}
           <a
             href={whatsappLink}
@@ -124,7 +119,6 @@ export default function Navbar() {
           >
             WhatsApp
           </a>
-
 
         </nav>
 
@@ -138,7 +132,6 @@ export default function Navbar() {
         >
           {isOpen ? "✕" : "☰"}
         </button>
-
 
       </div>
 
@@ -163,7 +156,6 @@ export default function Navbar() {
               </Link>
 
             ))}
-
 
             <a
               href={whatsappLink}

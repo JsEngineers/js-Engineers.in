@@ -98,7 +98,7 @@ export default function ServicesPage() {
               </Button>
 
               <Button
-                href={`https://wa.me/${COMPANY.phone.replace(/\D/g, "")}`}
+                href={`https://wa.me/${COMPANY.phones.mobile.replace(/\D/g, "")}`}
                 className="px-8 py-3 bg-green-500 hover:bg-green-600 text-white font-medium rounded-lg shadow-lg"
               >
                 WhatsApp Now

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { COMPANY } from "../../constants/company";
-import { IMAGES } from "../../assets/images";
 
 export default function Footer() {
   return (
@@ -13,11 +12,12 @@ export default function Footer() {
         {/* Company Info */}
         <div>
 
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center  mb-4">
 
-            <div className="relative w-36 h-35">
+            {/* ✅ Updated: Proper controlled logo size */}
+            <div className="relative w-[300px] h-[250px]">
               <Image
-                src={IMAGES.LOGO_PRIMARY}
+                src={COMPANY.logo}
                 alt={COMPANY.name}
                 fill
                 className="object-contain"
@@ -36,8 +36,9 @@ export default function Footer() {
 
           {/* WhatsApp CTA */}
           <a
-            href={`https://wa.me/${COMPANY.phone.replace(/\D/g, "")}`}
+            href={`https://wa.me/${COMPANY.phones.mobile.replace(/\D/g, "")}`}
             target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm shadow transition"
           >
             Chat on WhatsApp
@@ -108,25 +109,40 @@ export default function Footer() {
               {COMPANY.address.pincode}
             </li>
 
+            {/* ✅ Mobile */}
             <li>
-              📞{" "}
+              📱{" "}
               <a
-                href={`tel:${COMPANY.phone}`}
+                href={`tel:${COMPANY.phones.mobile}`}
                 className="hover:text-white transition"
               >
-                {COMPANY.phone}
+                {COMPANY.displayPhones.mobile}
               </a>
             </li>
 
+            {/* ✅ Landline */}
             <li>
-              ✉️{" "}
+              ☎️{" "}
               <a
-                href={`mailto:${COMPANY.email}`}
+                href={`tel:${COMPANY.phones.landline}`}
                 className="hover:text-white transition"
               >
-                {COMPANY.email}
+                {COMPANY.displayPhones.landline}
               </a>
             </li>
+
+            {/* ✅ Emails (Both) */}
+            {COMPANY.emails.map((email) => (
+              <li key={email}>
+                ✉️{" "}
+                <a
+                  href={`mailto:${email}`}
+                  className="hover:text-white transition"
+                >
+                  {email}
+                </a>
+              </li>
+            ))}
 
           </ul>
 

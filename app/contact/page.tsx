@@ -9,9 +9,7 @@ export default function ContactPage() {
       {/* HERO HEADER */}
       <section className="relative pt-32 pb-20 text-center overflow-hidden">
 
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 -z-10"></div>
-
+        <div className="absolute inset-0 bg-linear-to-br from-blue-600 to-blue-800 -z-10"></div>
         <div className="absolute inset-0 bg-black/40 -z-10"></div>
 
         <Section>
@@ -38,7 +36,6 @@ export default function ContactPage() {
           {/* LEFT: Contact Info */}
           <div className="space-y-8">
 
-            {/* Card */}
             <div className="bg-white rounded-2xl shadow-lg p-6 border">
 
               <h2 className="text-2xl font-semibold mb-4 font-[var(--font-poppins)]">
@@ -56,25 +53,40 @@ export default function ContactPage() {
                   {COMPANY.address.pincode}
                 </p>
 
+                {/* ✅ Mobile */}
                 <p>
-                  📞{" "}
+                  📱{" "}
                   <a
-                    href={`tel:${COMPANY.phone}`}
+                    href={`tel:${COMPANY.phones.mobile}`}
                     className="hover:text-blue-600 font-medium"
                   >
-                    {COMPANY.phone}
+                    {COMPANY.displayPhones.mobile}
                   </a>
                 </p>
 
+                {/* ✅ Landline */}
                 <p>
-                  ✉️{" "}
+                  ☎️{" "}
                   <a
-                    href={`mailto:${COMPANY.email}`}
+                    href={`tel:${COMPANY.phones.landline}`}
                     className="hover:text-blue-600 font-medium"
                   >
-                    {COMPANY.email}
+                    {COMPANY.displayPhones.landline}
                   </a>
                 </p>
+
+                {/* ✅ Emails */}
+                {COMPANY.emails.map((email) => (
+                  <p key={email}>
+                    ✉️{" "}
+                    <a
+                      href={`mailto:${email}`}
+                      className="hover:text-blue-600 font-medium"
+                    >
+                      {email}
+                    </a>
+                  </p>
+                ))}
 
               </div>
 
@@ -93,8 +105,8 @@ export default function ContactPage() {
               </p>
 
               <Button
-                href={`https://wa.me/${COMPANY.phone.replace(/\D/g, "")}`}
-                className="bg-white text-green-600 hover:bg-green-50 font-medium px-6 py-3 rounded-lg"
+                href={`https://wa.me/${COMPANY.phones.mobile.replace(/\D/g, "")}`}
+                className="bg-blue-1000 text-green-600 hover:bg-gray-500 font-medium px-6 py-3 rounded-lg"
               >
                 Chat on WhatsApp
               </Button>
