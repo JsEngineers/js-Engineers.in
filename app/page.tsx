@@ -162,7 +162,7 @@ export default function HomePage() {
 
               <Button
                 href="/contact"
-                className="px-8 py-3 bg-white text-blue-700 hover:bg-gray-100 rounded-lg shadow-lg"
+                className="px-8 py-3 bg-green-500 text-blue-700 hover:bg-green-600 rounded-lg shadow-lg"
               >
                 Request Service
               </Button>
